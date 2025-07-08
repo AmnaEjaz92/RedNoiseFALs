@@ -421,8 +421,8 @@ class RedNoiseFALs:
 
 
         try:
-                float_expected = ((type(x0) is float))       
-                if (not float_expected):
+                expected_value = ((type(x0) is float) or (type(x0) is int))       
+                if (not expected_value):
                     raise ValueError
         except ValueError:
                 print("The initial guess x0 should be a real number")
@@ -514,7 +514,7 @@ class RedNoiseFALs:
 
    
 
-
+        
         wnll_ar1_dist = np.zeros((n_bootstrap))
         wnll_wn_dist = np.zeros((n_bootstrap))
         wnll_pl_dist = np.zeros((n_bootstrap))
